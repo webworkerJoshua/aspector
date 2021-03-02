@@ -84,7 +84,7 @@
                            id="output[width]"
                            class="text-gray-800 dark:bg-gray-600 dark:text-gray-300 border-0 p-2 w-full"
                            bind:value={output.width}
-                           on:change={processOutputWidthChange}>
+                           on:input={processOutputWidthChange}>
                 </div>
 
                 <div class="field mt-4">
@@ -94,17 +94,17 @@
                            id="output[height]"
                            class="text-gray-800 dark:bg-gray-600 dark:text-gray-300 border-0 p-2 w-full"
                            bind:value={output.height}
-                           on:change={processOutputHeightChange}>
+                           on:input={processOutputHeightChange}>
                 </div>
             </div>
         </div>
-        <div class="w-full mt-4 bg-gray-900 p-4 text-center">
+        <div class="w-full mt-4 bg-gray-300 dark:bg-gray-900 p-4 text-center">
             <h2 class="font-bold text-xl">Aspect-Ratio</h2>
             <span class="aspect-ratio">{aspectRatio.width | 0}:{aspectRatio.height | 0}</span>
-            <div class="field mt-4">
+            <div class="field mt-4" hidden>
                 <label for="input[aspectratio]" class="font-bold cursor-pointer">Typical Aspect-Ratios</label>
                 <select name="input[aspectratio]" id="input[aspectratio]" bind:value={input.aspectratio}
-                        on:change={processInputAspectRatio}>
+                        on:input={processInputAspectRatio}>
                     <option value=""></option>
                     <option value="1:1">1:1 (square)</option>
                     <option value="4:3">4:3</option>

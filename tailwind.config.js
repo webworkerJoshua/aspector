@@ -1,5 +1,5 @@
 const isProduction = !process.env.ROLLUP_WATCH;
-
+const colors = require("tailwindcss/colors")
 
 module.exports = {
     purge: {
@@ -17,7 +17,11 @@ module.exports = {
     },
     darkMode: "media", // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                gray: colors.blueGray
+            }
+        },
     },
     variants: {
         extend: {},
